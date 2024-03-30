@@ -8,7 +8,7 @@ resource "random_string" "s3name" {
 
 #create S3 bucket
 resource "aws_s3_bucket" "mybucket" {
-  bucket = "myterraform-zeaxl0si8p7s6zmi"
+  bucket = "var.bucketname"  #To use random we can Provide  the value as ${random_string.s3name.result}, which will generate a new id each
 }
 
 resource "aws_s3_bucket_ownership_controls" "ownershiprule" {
